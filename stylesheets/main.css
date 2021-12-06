@@ -307,6 +307,12 @@ body.lock {
   }
 }
 
+@media screen and (max-height: 568px) {
+  .icon {
+    width: 180px;
+  }
+}
+
 .faq__pic {
   position: absolute;
   left: -90px;
@@ -333,6 +339,12 @@ body.lock {
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
     top: -165px;
+  }
+}
+
+@media screen and (max-height: 568px) {
+  .faq__pic {
+    top: -105px;
   }
 }
 

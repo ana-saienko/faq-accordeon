@@ -141,6 +141,10 @@
   @media (max-width: 768px) {
     width: 237px;
   }
+
+  @media screen and ( max-height: 568px ){
+    width: 180px;
+  }
 }
 
 .faq__pic {
@@ -161,5 +165,9 @@
     left: 50%;
     transform: translateX(-50%);
     top: -165px;
+}
+
+@media screen and ( max-height: 568px ){
+  top: -105px;
 }
 }
