@@ -159,7 +159,7 @@ body.lock {
 
 @media (max-width: 1095px) {
   .faq__card {
-    margin: 0px 15px;
+    margin: 15px 15px;
   }
 }
 
