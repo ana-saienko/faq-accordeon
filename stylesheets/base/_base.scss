@@ -1,0 +1,28 @@
+// This file contains very basic styles.
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+// main styles for the layout
+
+body {
+	font-family: 'Kumbh Sans', sans-serif;
+	&.lock {
+		overflow: hidden;
+	}
+}
+
+.container {
+	max-width: 1440px;
+	margin: 0 auto;
+}
+
+

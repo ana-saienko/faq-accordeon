@@ -1,0 +1,406 @@
+@charset "UTF-8";
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+aside,
+nav,
+footer,
+header,
+section {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 320px;
+}
+
+body {
+  line-height: 1;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-size: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+  background-color: inherit;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+body.lock {
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/**
+ * Basic typography style for copy text
+ */
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.header__menu-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.wrap {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: -webkit-gradient(linear, left top, left bottom, from(#b068e9), to(#6463e7));
+  background: linear-gradient(180deg, #b068e9 0%, #6463e7 100%);
+}
+
+.faq__card {
+  max-width: 920px;
+  background: #ffffff;
+  -webkit-box-shadow: 0px 50px 50px -20px rgba(53, 18, 122, 0.497159);
+          box-shadow: 0px 50px 50px -20px rgba(53, 18, 122, 0.497159);
+  border-radius: 23px;
+}
+
+.faq__accordeon {
+  padding: 65px 95px 83px 475px;
+}
+
+.faq__title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 32px;
+  color: #1e1f36;
+  text-transform: uppercase;
+  margin-bottom: 43px;
+}
+
+.question {
+  margin: 17px 0 17px;
+}
+
+.question__trigger {
+  width: 100%;
+  text-align: left;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  color: #4b4c5f;
+}
+
+.answer {
+  overflow: hidden;
+  height: 0;
+  -webkit-transition: height 0.5s;
+  transition: height 0.5s;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #787887;
+  border-bottom: 1px solid #E8E8EA;
+}
+
+/*
+==========================================================
+В Хедере нужно чтобы была такая обертка:
+
+.header__menu
+
+внутри сам бургер 
+
+<div class="icon-menu">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+и ниже пункты меню, которые уберутся в бургер
+
+nav.menu__body
+  ul
+    li
+      a
+
+*/
+@media (max-width: 767.98px) {
+  .menu__body {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.315);
+    -webkit-transition: left 0.3s ease 0s;
+    transition: left 0.3s ease 0s;
+    overflow: auto;
+  }
+  .menu__body.burger-active {
+    left: 0;
+  }
+  .menu__body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: #000;
+  }
+  .header__menu-list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 40px;
+  }
+  .header__menu-item {
+    padding: 20px;
+    margin: 20px;
+  }
+}
+
+.icon-menu {
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+  .icon-menu {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    width: 30px;
+    height: 18px;
+    cursor: pointer;
+    z-index: 5;
+  }
+  .icon-menu span {
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    top: calc(50% - 1px);
+    left: 0px;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.664);
+  }
+  .icon-menu span:first-child {
+    top: 0px;
+  }
+  .icon-menu span:last-child {
+    top: auto;
+    bottom: 0px;
+  }
+  .icon-menu.burger-active span {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  .icon-menu.burger-active span:first-child {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    top: calc(50% - 1px);
+  }
+  .icon-menu.burger-active span:last-child {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    bottom: calc(50% - 1px);
+  }
+}
+
+/*
+.menu {
+  &__list {
+    @media (min-width: $md3+px) {
+      display: flex;
+      align-items: center;
+    }
+
+    & > li {
+      position: relative;
+      margin: 0px 0px 0px 20px;
+
+      @media (min-width: $md3+px) {
+        padding: 10px 0;
+      }
+    }
+  }
+
+  // верстка самих пунктов меню
+
+  &__link {
+    color: #fff;
+    font-size: 18px;
+  }
+
+  &__sub-list {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #000;
+    padding: 15px;
+    min-width: 200px;
+
+    @media (min-width: $md3+px) {
+      transform: translate(0px, 10%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease 0s;
+      pointer-events: none;
+    }
+  }
+
+  &__sub-item {
+    margin: 0px 0px 10px 0px;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__sub-link {
+    color: #fff;
+  }
+
+  &__arrow {
+	  display: none;
+  }
+}
+
+
+==========================================================
+если устройство - ноут или комп, то подменю показывается как обычно при наведении мышкой
+если устройство - телефон, появляется стрелочка, которая переворачивается при клике
+
+
+body._pc .menu__list > li:hover .menu__sub-list {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0px, 0px);
+  pointer-events: all;
+}
+
+body._touch .menu__list > li {
+	display: flex;
+	align-items: center;
+}
+
+body._touch .menu__link {
+	flex: 1 1 auto;
+}
+
+body._touch .menu__arrow {
+	display: block;
+	margin: 0px 0px 0px 5px;
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 10px solid #fff;
+	transition: transform 0.3s ease 0s;
+}
+
+body._touch .menu__list > li.active .menu__sub-list {
+	opacity: 1;
+	visibility: visible;
+	transform: translate(0px, 0px);
+	pointer-events: all;
+ }
+
+ body._touch .menu__list > li.active .menu__arrow {
+	 transform: rotate(-180deg);
+ }
+*/
