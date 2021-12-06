@@ -8,14 +8,43 @@
 
 .faq__card {
   max-width: 920px;
+  position: relative;
 
-  background: #ffffff;
+  background-color: #ffffff;
+  background-image: url(../../images/bg.svg);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
   box-shadow: 0px 50px 50px -20px rgba(53, 18, 122, 0.497159);
   border-radius: 23px;
+
+  @media (max-width: 1095px) {
+    margin: 0px 15px;
+  }
+
+  @media (max-width: 505px){
+    background-image: none;
+}
 }
 
 .faq__accordeon {
   padding: 65px 95px 83px 475px;
+
+  @media (max-width: 1095px) {
+    padding: 35px 65px 35px 400px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 35px 45px 35px 300px;
+  }
+
+  @media (max-width: 610px) {
+    padding: 30px 40px 30px 200px;
+  }
+
+  @media (max-width: 505px){
+    padding: 130px 24px 48px 24px;
+}
 }
 
 .faq__title {
@@ -25,6 +54,15 @@
   color: #1e1f36;
   text-transform: uppercase;
   margin-bottom: 43px;
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+    margin-bottom: 35px;
+  }
+
+  @media (max-width: 505px){
+      text-align: center;
+  }
 }
 
 // ---------------------------------------
@@ -56,12 +94,10 @@
   font-size: 12px;
   line-height: 18px;
   color: #787887;
-
-  
 }
 
 .accordion {
-  border-bottom: 1px solid #E8E8EA;
+  border-bottom: 1px solid #e8e8ea;
 }
 
 .accordion__title {
@@ -69,6 +105,15 @@
   font-size: 14px;
   line-height: 14px;
   color: #4b4c5f;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: #f47b56;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
 }
 
 .open .accordion__content {
@@ -77,9 +122,44 @@
 }
 
 .open .accordion__icon {
-	transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .open .accordion__title {
   font-weight: 700;
+}
+
+.icon {
+  width: 472px;
+  height: 358px;
+
+  @media (max-width: 1095px) {
+    width: 363px;
+    height: 275px;
+  }
+
+  @media (max-width: 768px) {
+    width: 237px;
+  }
+}
+
+.faq__pic {
+  position: absolute;
+  left: -90px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  @media (max-width: 1095px) {
+    left: 10px;
+  }
+
+  @media (max-width: 610px) {
+    left: -60px;
+  }
+
+  @media (max-width: 505px){
+    left: 50%;
+    transform: translateX(-50%);
+    top: -165px;
+}
 }
