@@ -107,6 +107,8 @@
   color: #4b4c5f;
   transition: all 0.3s ease-in-out;
 
+
+
   &:hover {
     color: #f47b56;
   }
@@ -126,7 +128,13 @@
 }
 
 .open .accordion__title {
-  font-weight: 700;
+  //font-weight: 700;
+
+  text-shadow: 0px 0px 1px #4b4c5f;
+
+  &:hover {
+    text-shadow: 0px 0px 1px #f47b56;
+  }
 }
 
 .icon {
